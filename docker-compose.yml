@@ -25,6 +25,18 @@ services:
         target: /qdrant/config/production.yaml
     volumes:
       - ./qdrant:/qdrant/storage
+    depends_on:
+      - scrape
+
+  app:
+    build: ./app
+    container_name: app
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    command:
+    depends_on:
+      - qdrant
 
 configs:
   qdrant_config:
