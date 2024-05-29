@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  scrape:
+    build: ./scrape
+    container_name: scrape
+    working_dir: /scrape
+    volumes:
+    - ./scrape:/scrape
+    command: python3 /scrape/bluenote.py
