@@ -34,7 +34,7 @@ services:
     working_dir: /app
     volumes:
       - ./app:/app
-    command:
+    command: python3 /app/client.py
     depends_on:
       - qdrant
 
