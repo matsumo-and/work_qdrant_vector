@@ -7,7 +7,7 @@ services:
     working_dir: /scrape
     volumes:
     - ./scrape:/scrape
-    command: python3 /scrape/bluenote.py
+    command: python3 /scrape/artists.py
 
   qdrant:
     image: qdrant/qdrant:latest
