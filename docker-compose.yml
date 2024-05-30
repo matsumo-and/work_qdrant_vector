@@ -7,7 +7,8 @@ services:
     working_dir: /scrape
     volumes:
     - ./scrape:/scrape
-    command: python3 /scrape/artists.py
+    command: sh -c "python3 /scrape/artists.py"
+    #&& tail -f /dev/null
 
   qdrant:
     image: qdrant/qdrant:latest
@@ -34,7 +35,7 @@ services:
     working_dir: /app
     volumes:
       - ./app:/app
-    command: python3 /app/client.py
+    command: sh -c "python3 /app/client.py"
     depends_on:
       - qdrant
 
